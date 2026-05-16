@@ -1,0 +1,38 @@
+name: Deploy -> Banahosting
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'guia.html'
+      - 'assets/**'
+      - 'ventas/**'
+      - 'crm/**'
+      - 'crm-care-comfort/**'
+      - 'videos.html'
+      - 'videos/**'
+      - '.github/workflows/deploy-banahosting.yml'
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Clonar repo neutro
+        uses: actions/checkout@v4
+
+      - name: Deploy lifepluspets.vitallinkplus.com
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          server-dir: /lifepluspets.vitallinkplus.com/
+          local-dir: ./
+          exclude: |
+            **/.git*
+            **/.git*/**
+          security: loose
+          log-level: standard

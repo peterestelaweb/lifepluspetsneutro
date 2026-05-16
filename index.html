@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- lifepluspetspain.com v9 -->
 <html lang="es">
 <head>
   <meta charset="UTF-8" />
@@ -10,7 +11,7 @@
   <!-- Google Fonts -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&family=Montserrat:wght@400;600;700;800;900&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
 
   <style>
     /* ===========================
@@ -257,6 +258,59 @@
       background: rgba(255,255,255,0.12);
     }
 
+    .nav-utility {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.14);
+      border: 1px solid rgba(255,255,255,0.18);
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-switcher button {
+      border: none;
+      background: transparent;
+      color: rgba(255,255,255,0.82);
+      font-family: 'Montserrat', system-ui, sans-serif;
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 9px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: var(--transition);
+    }
+
+    .lang-switcher button:hover,
+    .lang-switcher button:focus-visible {
+      color: var(--white);
+      background: rgba(255,255,255,0.10);
+      outline: none;
+    }
+
+    .lang-switcher button.is-active {
+      background: var(--white);
+      color: var(--green-deep);
+      box-shadow: 0 8px 18px rgba(0,0,0,0.12);
+    }
+
+    .lang-switcher button[lang="ar"] {
+      font-family: 'Cairo', sans-serif;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
     .nav-cta {
       background: var(--white) !important;
       color: var(--green-deep) !important;
@@ -290,6 +344,17 @@
     @media (max-width: 768px) {
       .nav-links { display: none; }
       .hamburger { display: flex; }
+      .nav-utility {
+        margin-left: auto;
+      }
+      .lang-switcher {
+        gap: 4px;
+        padding: 5px;
+      }
+      .lang-switcher button {
+        padding: 8px 10px;
+        font-size: 10px;
+      }
       .nav-links.open {
         display: flex;
         flex-direction: column;
@@ -677,6 +742,7 @@
     }
 
     .product-orb.animate-in {
+      opacity: 1;
       animation: orb-spin-in 1s cubic-bezier(0.34,1.56,0.64,1) forwards,
                  orb-3d-float 5s ease-in-out 1s infinite;
     }
@@ -820,6 +886,26 @@
       color: var(--gray-600);
       line-height: 1.7;
       margin-bottom: 20px;
+    }
+
+    .product-use {
+      font-size: 13px;
+      color: var(--green-deep);
+      line-height: 1.55;
+      margin: -8px 0 18px;
+      padding: 12px 14px;
+      background: linear-gradient(135deg, rgba(16, 185, 129, 0.10), rgba(16, 185, 129, 0.04));
+      border-left: 4px solid var(--brand);
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(16, 24, 40, 0.05);
+    }
+
+    .product-use strong {
+      display: inline-block;
+      margin-right: 4px;
+      color: var(--brand);
+      letter-spacing: 0.02em;
+      text-transform: uppercase;
     }
 
     .product-benefits {
@@ -997,6 +1083,257 @@
       font-weight: 600;
       padding: 4px 12px;
       border-radius: 100px;
+    }
+
+    /* ===========================
+       GUIDE PREVIEW
+    =========================== */
+    .guide-preview {
+      background:
+        radial-gradient(circle at top right, rgba(139,195,74,0.22), transparent 28%),
+        linear-gradient(180deg, #f8f5ed 0%, #f1ecdf 100%);
+      border-top: 1px solid rgba(27,94,59,0.08);
+      border-bottom: 1px solid rgba(27,94,59,0.08);
+    }
+
+    .guide-preview-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
+      gap: 56px;
+      align-items: center;
+    }
+
+    @media (max-width: 960px) {
+      .guide-preview-grid {
+        grid-template-columns: 1fr;
+        gap: 40px;
+      }
+    }
+
+    .guide-preview-copy .section-label {
+      background: rgba(27,94,59,0.08);
+      color: var(--green-deep);
+    }
+
+    .guide-preview-copy .section-title {
+      max-width: 12ch;
+      margin-bottom: 18px;
+    }
+
+    .guide-preview-copy .section-subtitle {
+      margin: 0 0 24px;
+      max-width: 60ch;
+    }
+
+    .guide-preview-points {
+      display: grid;
+      gap: 12px;
+      margin-bottom: 28px;
+    }
+
+    .guide-preview-point {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: var(--text-body);
+      font-size: 15px;
+      line-height: 1.5;
+    }
+
+    .guide-preview-point strong {
+      color: var(--text-dark);
+    }
+
+    .guide-preview-dot {
+      width: 10px;
+      height: 10px;
+      border-radius: 50%;
+      background: var(--green-lime);
+      box-shadow: 0 0 0 7px rgba(139,195,74,0.18);
+      flex-shrink: 0;
+    }
+
+    .guide-preview-actions {
+      display: flex;
+      gap: 14px;
+      flex-wrap: wrap;
+    }
+
+    .guide-preview-book {
+      position: relative;
+      max-width: 420px;
+      margin-left: auto;
+      perspective: 1600px;
+    }
+
+    @media (max-width: 960px) {
+      .guide-preview-book {
+        margin-left: 0;
+      }
+    }
+
+    .guide-preview-book::before,
+    .guide-preview-book::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 28px;
+      transform-origin: left center;
+      transition: transform 320ms ease;
+    }
+
+    .guide-preview-book::before {
+      background: rgba(27,94,59,0.10);
+      transform: translate(16px, 16px) rotate(4deg);
+    }
+
+    .guide-preview-book::after {
+      background: rgba(27,94,59,0.07);
+      transform: translate(8px, 8px) rotate(2deg);
+    }
+
+    .guide-preview-card {
+      position: relative;
+      z-index: 1;
+      min-height: 460px;
+      padding: 34px 30px 30px;
+      border-radius: 28px;
+      color: var(--white);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)),
+        linear-gradient(160deg, #0e3d27 0%, #1B5E3B 55%, #2e7d52 100%);
+      box-shadow: 0 26px 60px rgba(27,94,59,0.24);
+      overflow: hidden;
+      transform-style: preserve-3d;
+      transition: transform 320ms ease, box-shadow 320ms ease;
+    }
+
+    .guide-preview-book:hover .guide-preview-card {
+      transform: rotateY(-9deg) rotateX(2deg);
+      box-shadow: 0 34px 70px rgba(27,94,59,0.28);
+    }
+
+    .guide-preview-book:hover::before {
+      transform: translate(20px, 18px) rotate(6deg);
+    }
+
+    .guide-preview-book:hover::after {
+      transform: translate(10px, 10px) rotate(3deg);
+    }
+
+    .guide-preview-card::before {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border-radius: 22px;
+      border: 1px solid rgba(255,255,255,0.16);
+      pointer-events: none;
+    }
+
+    .guide-preview-card::after {
+      content: '';
+      position: absolute;
+      top: 18px;
+      right: -64px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.08);
+      filter: blur(2px);
+    }
+
+    .guide-preview-kicker {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 7px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.88);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .guide-preview-kicker::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-lime);
+      box-shadow: 0 0 0 6px rgba(139,195,74,0.15);
+    }
+
+    .guide-preview-card h3 {
+      font-size: clamp(34px, 5vw, 52px);
+      line-height: 0.98;
+      letter-spacing: -0.04em;
+      margin: 22px 0 16px;
+      max-width: 7ch;
+    }
+
+    .guide-preview-card p {
+      position: relative;
+      z-index: 1;
+      color: rgba(255,255,255,0.76);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 30ch;
+      margin-bottom: 24px;
+    }
+
+    .guide-preview-chapters {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 26px;
+    }
+
+    .guide-preview-chapters span {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.82);
+      font-size: 12px;
+      font-weight: 600;
+    }
+
+    .guide-preview-meta {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .guide-preview-meta strong {
+      display: block;
+      color: var(--white);
+      font-size: 26px;
+      font-weight: 800;
+      margin-bottom: 4px;
+    }
+
+    .guide-preview-meta span {
+      display: block;
+      color: rgba(255,255,255,0.70);
+      font-size: 12px;
+      line-height: 1.4;
+    }
+
+    @media (max-width: 640px) {
+      .guide-preview-card {
+        min-height: auto;
+      }
+
+      .guide-preview-meta {
+        grid-template-columns: 1fr;
+      }
     }
 
     /* ===========================
@@ -1183,6 +1520,24 @@
       margin-bottom: 40px;
     }
 
+    .vets-content {
+      grid-column: 1;
+      grid-row: 1;
+    }
+
+    .vets-right-video {
+      grid-column: 2;
+      grid-row: 1;
+      align-self: start;
+    }
+
+    @media (max-width: 900px) {
+      .vets-right-video {
+        grid-column: auto;
+        grid-row: auto;
+      }
+    }
+
     .vets-benefits {
       display: flex;
       flex-direction: column;
@@ -1229,6 +1584,28 @@
       padding: 40px;
       backdrop-filter: blur(8px);
     }
+
+    .vets-video-wrap {
+      margin: 16px 0 22px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(0,0,0,0.18);
+      box-shadow: 0 18px 42px rgba(0,0,0,0.25);
+    }
+
+    .vets-video-wrap.left {
+      max-width: 520px;
+      margin-top: 26px;
+    }
+
+    .vets-video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    
 
     .vets-form h3 {
       font-size: 20px;
@@ -1621,6 +1998,22 @@
       flex-wrap: wrap;
     }
 
+    .footer-video-wrap {
+      width: min(320px, 100%);
+      flex: 0 1 320px;
+      border-radius: 16px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+    }
+
+    .footer-video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
     .footer-disclaimer {
       font-size: 11px;
       color: rgba(255,255,255,0.3);
@@ -1686,10 +2079,38 @@
       .hero-actions { flex-direction: column; }
       .hero-actions .btn { width: 100%; justify-content: center; }
       .vets-form { padding: 28px 20px; }
+      .nav-logo-sub { display: none; }
+      .lang-switcher button[lang="ar"] { font-size: 12px; }
+    }
+
+    html[dir="rtl"] body {
+      font-family: 'Cairo', system-ui, sans-serif;
+    }
+
+    html[dir="rtl"] .navbar .container,
+    html[dir="rtl"] .nav-links,
+    html[dir="rtl"] .hero-actions,
+    html[dir="rtl"] .hero-stats,
+    html[dir="rtl"] .guide-preview-actions,
+    html[dir="rtl"] .products-grid,
+    html[dir="rtl"] .footer-bottom-inner {
+      direction: rtl;
+    }
+
+    html[dir="rtl"] .hero-stat,
+    html[dir="rtl"] .guide-preview-point,
+    html[dir="rtl"] .footer-grid,
+    html[dir="rtl"] .product-content,
+    html[dir="rtl"] .faq-question,
+    html[dir="rtl"] .faq-answer-inner,
+    html[dir="rtl"] .footer-col,
+    html[dir="rtl"] .footer-disclaimer,
+    html[dir="rtl"] .footer-copyright {
+      text-align: right;
     }
   </style>
 </head>
-<body>
+<body data-page="home" data-locale="es">
 
   <!-- =================== NAVBAR =================== -->
   <nav class="navbar" id="navbar">
@@ -1705,8 +2126,11 @@
       <ul class="nav-links" id="navLinks">
         <li><a href="#productos" onclick="closeMenu()">Productos</a></li>
         <li><a href="#para-quien" onclick="closeMenu()">Para quién</a></li>
+        <li><a href="guia.html" onclick="closeMenu()">Guía</a></li>
         <li><a href="#testimonios" onclick="closeMenu()">Testimonios</a></li>
         <li><a href="#veterinarios" onclick="closeMenu()">Veterinarios</a></li>
+        <li><a href="videos.html" onclick="closeMenu()">Vídeos</a></li>
+        <li><a href="ventas/" onclick="closeMenu()">Ventas</a></li>
         <li><a href="#faq" onclick="closeMenu()">FAQ</a></li>
         <li>
           <a href="https://www.lifeplus.com/" target="_blank" rel="noopener" class="btn nav-cta" onclick="closeMenu()">
@@ -1714,6 +2138,14 @@
           </a>
         </li>
       </ul>
+
+      <div class="nav-utility">
+        <div class="lang-switcher" aria-label="Selector de idioma">
+          <button type="button" class="is-active" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ar" lang="ar">العربية</button>
+        </div>
+      </div>
 
       <div class="hamburger" id="hamburger" onclick="toggleMenu()" aria-label="Menú" role="button" tabindex="0">
         <span></span>
@@ -1732,7 +2164,7 @@
       <div class="container">
         <div class="hero-badge fade-in">
           <span class="hero-badge-dot"></span>
-          <span>Independent Member · LifePlus International</span>
+          <span>LifePlus Pets España</span>
         </div>
 
         <h1 class="hero-title fade-in fade-in-delay-1">
@@ -1746,8 +2178,14 @@
         </p>
 
         <div class="hero-actions fade-in fade-in-delay-3">
-          <a href="#productos" class="btn btn-primary">
+          <a href="guia.html" class="btn btn-primary">
+            📘 Abrir guía
+          </a>
+          <a href="#productos" class="btn btn-outline">
             🌿 Ver productos
+          </a>
+          <a href="videos.html" class="btn btn-outline">
+            🎬 Ver vídeos
           </a>
           <a href="#veterinarios" class="btn btn-outline">
             🩺 Para veterinarios
@@ -1771,10 +2209,81 @@
       </div>
     </div>
 
-    <div class="hero-member-badge" aria-label="Independent Member Badge">
+    <div class="hero-member-badge" aria-label="LifePlus Pets Badge">
       <div class="hero-member-badge-inner">
         <span class="plus-icon">+</span>
-        <span>Independent<br>Member<br>LifePlus</span>
+        <span>LifePlus<br>Pets<br>España</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- =================== GUIDE PREVIEW =================== -->
+  <section class="guide-preview section" id="guia">
+    <div class="container">
+      <div class="guide-preview-grid">
+        <div class="guide-preview-copy fade-in">
+          <span class="section-label">Guía complementaria</span>
+          <h2 class="section-title">Tu guía completa LifePlus Pets, ahora visible desde la portada.</h2>
+          <p class="section-subtitle">
+            Si quieres entender rápido toda la línea, aquí tienes el mejor punto de entrada: resumen general, fichas por producto, pautas de uso y una lectura mucho más cómoda que el PDF tradicional.
+          </p>
+
+          <div class="guide-preview-points">
+            <div class="guide-preview-point">
+              <span class="guide-preview-dot"></span>
+              <span><strong>Entrada rápida:</strong> una vista global antes de ir a productos o comprar.</span>
+            </div>
+            <div class="guide-preview-point">
+              <span class="guide-preview-dot"></span>
+              <span><strong>Fichas claras:</strong> cada referencia explicada en lenguaje directo y ordenado.</span>
+            </div>
+            <div class="guide-preview-point">
+              <span class="guide-preview-dot"></span>
+              <span><strong>Lectura cómoda:</strong> diseñada para móvil y escritorio, sin visor pesado ni zoom incómodo.</span>
+            </div>
+          </div>
+
+          <div class="guide-preview-actions">
+            <a href="guia.html" class="btn btn-primary">Ver la guía completa</a>
+            <a href="guia.html#productos" class="btn btn-outline">Ir a las fichas</a>
+            <a href="videos.html" class="btn btn-outline">Abrir vídeos</a>
+          </div>
+        </div>
+
+        <div class="guide-preview-book fade-in fade-in-delay-2" aria-hidden="true">
+          <div class="guide-preview-card">
+            <span class="guide-preview-kicker">17 páginas convertidas en web</span>
+            <h3>Guía práctica LifePlus Pets</h3>
+            <p>
+              Un formato editorial para consultar digestión, calma, movilidad, premios funcionales, pelaje, cuidado externo y app en una sola lectura.
+            </p>
+
+            <div class="guide-preview-chapters">
+              <span>Calm</span>
+              <span>Digest</span>
+              <span>Move</span>
+              <span>Biscuits</span>
+              <span>Ahiflower Oil</span>
+              <span>Care &amp; Comfort</span>
+              <span>App Pets</span>
+            </div>
+
+            <div class="guide-preview-meta">
+              <div>
+                <strong>7</strong>
+                <span>capítulos prácticos y navegación directa</span>
+              </div>
+              <div>
+                <strong>1</strong>
+                <span>guía única para branded y neutro</span>
+              </div>
+              <div>
+                <strong>100%</strong>
+                <span>lectura web, sin visor pesado ni zoom incómodo</span>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
   </section>
@@ -1813,6 +2322,7 @@
   </section>
 
   <!-- =================== PRODUCTS =================== -->
+  <!-- Neutral deploy rewrites product links to direct product pages without shop id. -->
   <section class="products section" id="productos">
     <div class="container">
       <div class="products-header fade-in">
@@ -1843,6 +2353,7 @@
             <p class="product-desc">
               Golosinas blandas formuladas para favorecer la salud digestiva de tu perro. Cada una contiene una potente mezcla de ingredientes diseñada para promover el equilibrio intestinal, facilitar la digestión y mejorar el bienestar general.
             </p>
+            <p class="product-use"><strong>Cómo se toma:</strong> 1 masticable al día por cada 9 kg (20 lbs) de peso corporal, añadido a la alimentación normal.</p>
             <ul class="product-benefits">
               <li class="product-benefit">
                 <span class="benefit-icon">🦠</span>
@@ -1857,7 +2368,7 @@
                 <span><strong>Ahiflower® Omega</strong> — Aceite y semillas micronizadas ricas en omega-3 para piel y pelaje</span>
               </li>
             </ul>
-            <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="product-cta">
+            <a href="https://ww1.lifeplus.com/es/es/product-details/3536/lifeplus-pets%AE-digest" target="_blank" rel="noopener" class="product-cta">
               Comprar Digest →
             </a>
           </div>
@@ -1881,6 +2392,7 @@
             <p class="product-desc">
               Masticables calmantes formulados con el exclusivo C10 Calming Colostrum Complex™ y Tiamina B1. Diseñados para reducir la ansiedad en tormentas, visitas al veterinario, viajes, fuegos artificiales y nuevos entornos, sin alterar el comportamiento natural de tu perro.
             </p>
+            <p class="product-use"><strong>Cómo se toma:</strong> 1 masticable al día por cada 9 kg (20 lbs) de peso corporal, añadido a la alimentación normal.</p>
             <ul class="product-benefits">
               <li class="product-benefit">
                 <span class="benefit-icon">⚡</span>
@@ -1895,7 +2407,7 @@
                 <span><strong>Formato masticable</strong> — Textura y sabor apetecible. Fácil de administrar como un premio</span>
               </li>
             </ul>
-            <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="product-cta">
+            <a href="https://ww1.lifeplus.com/es/es/product-details/3534/lifeplus-pets%AE-calm" target="_blank" rel="noopener" class="product-cta">
               Comprar Calm →
             </a>
           </div>
@@ -1914,15 +2426,16 @@
           <div class="product-content">
             <span class="product-tag">Protección natural</span>
             <div class="product-name">Lifeplus Pets™ Care &amp; Comfort</div>
-            <div class="product-tagline">Protección real sin química agresiva</div>
-            <span class="product-star-badge">🌸 Aceites esenciales certificados</span>
+            <div class="product-tagline">Aerosol veterinario para pulgas y garrapatas</div>
+            <span class="product-star-badge">🌸 Aceites naturales activos</span>
             <p class="product-desc">
-              Spray antiparasitario natural sin permetrina. Formulado con aceites esenciales de árbol del té, citronela, lavanda y cedro para una protección efectiva contra pulgas, garrapatas y mosquitos, respetando la piel sensible de tu perro.
+              Aerosol veterinario solo para perros con una fórmula no tóxica de aceite de limoncillo, aceite de canela, aceite de andiroba y aceite de ricino. Ayuda a manejar pulgas, garrapatas, mosquitos, moscas, ácaros, piojos y otros parásitos externos mientras contribuye al confort de la piel y el pelaje.
             </p>
+            <p class="product-use"><strong>Cómo se aplica:</strong> agitar bien antes de usar. Rocíe generosamente el pelo de la mascota, evitando la nariz, la boca y los ojos. Puede emplearse a diario.</p>
             <ul class="product-benefits">
               <li class="product-benefit">
                 <span class="benefit-icon">🚫</span>
-                <span><strong>Sin permetrina</strong> — Seguro para hogares con gatos y niños pequeños</span>
+                <span><strong>Solo para perros</strong> — Uso externo, evitando nariz, boca y ojos</span>
               </li>
               <li class="product-benefit">
                 <span class="benefit-icon">💧</span>
@@ -1930,10 +2443,10 @@
               </li>
               <li class="product-benefit">
                 <span class="benefit-icon">🌲</span>
-                <span><strong>4 aceites activos</strong> — Árbol del té + citronela + lavanda + cedro en sinergia</span>
+                <span><strong>4 aceites activos</strong> — Limoncillo + canela + andiroba + ricino</span>
               </li>
             </ul>
-            <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="product-cta">
+            <a href="https://ww1.lifeplus.com/es/es/product-details/3540/lifeplus-pets%AE-care-%26-comfort" target="_blank" rel="noopener" class="product-cta">
               Comprar Care &amp; Comfort →
             </a>
           </div>
@@ -1957,6 +2470,7 @@
             <p class="product-desc">
               Masticables blandos especialmente formulados para el soporte avanzado de articulaciones. Con Ahiflower® Oil &amp; Seed (omega 3, 6 y 9), contribuye a mantener la movilidad, la flexibilidad y la comodidad articular, especialmente en perros activos y seniors.
             </p>
+            <p class="product-use"><strong>Cómo se toma:</strong> 1 masticable al día por cada 9 kg (20 lbs) de peso corporal, añadido a la alimentación normal.</p>
             <ul class="product-benefits">
               <li class="product-benefit">
                 <span class="benefit-icon">🦵</span>
@@ -1971,7 +2485,7 @@
                 <span><strong>Origen vegetal</strong> — Fuente plant-based de omegas, sin derivados de pescado</span>
               </li>
             </ul>
-            <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="product-cta">
+            <a href="https://ww1.lifeplus.com/es/es/product-details/3535/lifeplus-pets%AE-move" target="_blank" rel="noopener" class="product-cta">
               Comprar Move →
             </a>
           </div>
@@ -1995,6 +2509,7 @@
             <p class="product-desc">
               Galletas sin gluten y sin cereales con mantequilla de cacahuete, Ahiflower® Oil &amp; Seed, harina de trigo sarraceno, harina de coco, manzana y canela. El snack que cuida mientras premia — perfecto para adiestramiento o simplemente para consentir a tu perro.
             </p>
+            <p class="product-use"><strong>Cómo se usa:</strong> premio o snack funcional para uso ocasional o suplementario.</p>
             <ul class="product-benefits">
               <li class="product-benefit">
                 <span class="benefit-icon">✅</span>
@@ -2009,7 +2524,7 @@
                 <span><strong>Nutrición en cada bocado</strong> — Ahiflower® Seed aporta omega-3 y omega-6 incluso en el premio</span>
               </li>
             </ul>
-            <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="product-cta">
+            <a href="https://ww1.lifeplus.com/es/es/product-details/5390/lifeplus-pets%AE-peanut-butter-biscuits" target="_blank" rel="noopener" class="product-cta">
               Comprar Biscuits →
             </a>
           </div>
@@ -2033,6 +2548,7 @@
             <p class="product-desc">
               Spray de aceite vegetal con el exclusivo Ahiflower® Oil, la fuente vegetal más completa de Omega 3 y 6. Con extracto de romero y tocoferoles naturales como antioxidantes. Para perros y gatos. Piel visiblemente más hidratada y pelaje extraordinariamente brillante.
             </p>
+            <p class="product-use"><strong>Cómo se toma:</strong> pulverizar sobre los alimentos o directamente en la boca. 1 pulverización por cada 2,27 kg de peso corporal al día.</p>
             <ul class="product-benefits">
               <li class="product-benefit">
                 <span class="benefit-icon">🌺</span>
@@ -2047,7 +2563,7 @@
                 <span><strong>Antioxidantes naturales</strong> — Extracto de romero + tocoferoles para máxima estabilidad</span>
               </li>
             </ul>
-            <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="product-cta">
+            <a href="https://ww1.lifeplus.com/es/es/product-details/3545/lifeplus-pets%AE-ahiflower%AE-oil" target="_blank" rel="noopener" class="product-cta">
               Comprar Ahiflower® Oil →
             </a>
           </div>
@@ -2185,80 +2701,57 @@
       <div class="vets-grid">
 
         <div class="vets-content fade-in">
-          <span class="section-label">Programa de Socios</span>
           <h2 class="section-title" style="color: var(--white);">
             Una recomendación que puedes hacer<br>con confianza
           </h2>
           <p class="vets-subtitle">
-            Respaldada por ciencia, aceptada por los dueños. Únete a la red de veterinarios y profesionales del sector que ya confían en LifePlus Pets.
+            Respaldada por ciencia, aceptada por los dueños. Si trabajas con perros y buscas una opción externa clara para pulgas, garrapatas, mosquitos, moscas, ácaros, piojos y otros parásitos externos, te enviamos la ficha profesional de Care &amp; Comfort.
           </p>
 
-          <div class="vets-benefits">
-            <div class="vet-benefit">
-              <div class="vet-benefit-icon">💶</div>
-              <div>
-                <h4>Márgenes del 30–45%</h4>
-                <p>Condiciones comerciales competitivas con estructura de incentivos por volumen para clínicas y centros de adiestramiento.</p>
-              </div>
-            </div>
+          
+        </div>
 
-            <div class="vet-benefit">
-              <div class="vet-benefit-icon">🎓</div>
-              <div>
-                <h4>Formación técnica certificada</h4>
-                <p>Acceso a material científico exclusivo, webinars con especialistas y certificación oficial en nutrición y suplementación canina.</p>
-              </div>
-            </div>
+        <div class="vets-right-video fade-in fade-in-delay-2">
+          <div class="vets-video-wrap" aria-label="Video LifePlus Pets">
+            <video
+              id="vetVideoRight"
+              class="vets-video"
+              src="assets/video/IzzyLowerThird.mp4"
+              autoplay
+              muted
+              loop
+              controls
+              playsinline
+              preload="metadata"
+            ></video>
+          </div>
+        </div>
 
-            <div class="vet-benefit">
-              <div class="vet-benefit-icon">🔬</div>
-              <div>
-                <h4>Soporte científico directo</h4>
-                <p>Línea directa con nuestro equipo técnico para resolver dudas de formulación, dosificación e interacciones para casos específicos.</p>
-              </div>
+        <div class="vets-benefits fade-in fade-in-delay-1" style="grid-column: 1 / -1;">
+          <div class="vet-benefit">
+            <div class="vet-benefit-icon">1</div>
+            <div>
+              <h4>Aerosol veterinario</h4>
+              <p>Un formato fácil de explicar y de incorporar a la rutina del centro.</p>
             </div>
           </div>
-
-          <a href="#contacto-vets" class="btn" style="background: var(--green-lime); color: var(--text-dark);">
-            Quiero ser partner →
-          </a>
+          <div class="vet-benefit">
+            <div class="vet-benefit-icon">2</div>
+            <div>
+              <h4>Solo para perros</h4>
+              <p>Diseñado para uso externo, con instrucciones claras y simples.</p>
+            </div>
+          </div>
+          <div class="vet-benefit">
+            <div class="vet-benefit-icon">3</div>
+            <div>
+              <h4>Parásitos externos</h4>
+              <p>Habla directamente de pulgas, garrapatas, mosquitos, moscas, ácaros y piojos.</p>
+            </div>
+          </div>
         </div>
 
-        <div class="vets-form fade-in fade-in-delay-2" id="contacto-vets">
-          <h3>Contacto para profesionales</h3>
-          <p>Rellena el formulario y un asesor especializado se pondrá en contacto contigo en menos de 24h.</p>
-
-          <form onsubmit="handleFormSubmit(event)">
-            <div class="form-group">
-              <label for="vet-name">Nombre completo</label>
-              <input type="text" id="vet-name" class="form-control" placeholder="Dra. María González" required />
-            </div>
-
-            <div class="form-group">
-              <label for="vet-clinic">Clínica / Centro</label>
-              <input type="text" id="vet-clinic" class="form-control" placeholder="Clínica Veterinaria San Bernardo" required />
-            </div>
-
-            <div class="form-group">
-              <label for="vet-email">Email profesional</label>
-              <input type="email" id="vet-email" class="form-control" placeholder="maria@clinica.es" required />
-            </div>
-
-            <div class="form-group">
-              <label for="vet-phone">Teléfono</label>
-              <input type="tel" id="vet-phone" class="form-control" placeholder="+34 600 000 000" />
-            </div>
-
-            <div class="form-group">
-              <label for="vet-message">Mensaje (opcional)</label>
-              <textarea id="vet-message" class="form-control" placeholder="Cuéntanos sobre tu clínica y tus intereses..."></textarea>
-            </div>
-
-            <button type="submit" class="form-submit">
-              Enviar solicitud →
-            </button>
-          </form>
-        </div>
+        
 
       </div>
     </div>
@@ -2323,7 +2816,7 @@
           <div class="blog-body">
             <span class="blog-category">Protección</span>
             <h3 class="blog-title">Antiparasitarios naturales: qué dicen los veterinarios sobre los aceites esenciales</h3>
-            <p class="blog-excerpt">Cada vez más profesionales recomiendan alternativas naturales sin permetrina. Te contamos qué ingredientes funcionan de verdad y cómo aplicarlos de forma segura.</p>
+            <p class="blog-excerpt">Cada vez más familias buscan rutinas externas con menos carga química innecesaria. Te contamos qué ingredientes incluye Care &amp; Comfort y cómo aplicarlo con prudencia.</p>
             <span class="blog-read-more">Leer más</span>
           </div>
         </div>
@@ -2383,12 +2876,12 @@
 
         <div class="faq-item fade-in fade-in-delay-3">
           <button class="faq-question" aria-expanded="false">
-            ¿Puedo usar Care &amp; Comfort si tengo gatos en casa?
+            ¿Puedo usar Care &amp; Comfort en gatos o en hogares con gatos?
             <span class="faq-icon" aria-hidden="true">+</span>
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              Care &amp; Comfort está formulado sin permetrina (un insecticida muy común en antiparasitarios convencionales que es altamente tóxico para los gatos). Esto lo hace mucho más seguro en hogares con gatos que la mayoría de las alternativas del mercado. Sin embargo, como precaución, recomendamos aplicarlo en un espacio bien ventilado y esperar a que el spray se haya secado completamente antes de dejar que el gato entre en contacto con el perro tratado. Para uso directamente en gatos, se recomienda el Ahiflower® Oil, específicamente formulado para ambas especies.
+              Care &amp; Comfort es solo para perros. No debe aplicarse directamente en gatos. Si conviven perros y gatos, úsalo con prudencia: aplícalo al perro evitando ojos, nariz y boca, deja que el pelaje se seque y consulta con tu veterinario si hay sensibilidad, enfermedad previa o dudas de convivencia.
             </div>
           </div>
         </div>
@@ -2412,7 +2905,7 @@
           </button>
           <div class="faq-answer" role="region">
             <div class="faq-answer-inner">
-              Puedes comprar todos los productos de LifePlus Pets directamente a través de nuestra tienda online en <strong>www.lifeplus.com/SHVCB5/S/</strong> o accediendo al catálogo completo de mascotas en <strong>ww1.lifeplus.com/SHVCB5/M/es/es/web-page/products?search=pets</strong>. Los envíos se realizan a toda España peninsula e islas. También puedes adquirirlos a través de veterinarios y centros de adiestramiento partners. Para más información, contacta con nosotros a través del formulario de la sección de profesionales.
+              Puedes comprar todos los productos de LifePlus Pets directamente a través de nuestra tienda online en <strong>www.lifeplus.com/</strong> o accediendo al catálogo completo de mascotas en <strong>ww1.lifeplus.com/es/es/web-page/products?search=pets</strong>. Los envíos se realizan a toda España peninsula e islas. También puedes adquirirlos a través de veterinarios y centros de adiestramiento partners. Para más información, contacta con nosotros a través del formulario de la sección de profesionales.
             </div>
           </div>
         </div>
@@ -2448,10 +2941,10 @@
         <div class="footer-col">
           <h4>Productos</h4>
           <ul class="footer-links">
-            <li><a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener">Lifeplus Pets™ Basics</a></li>
-            <li><a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener">Lifeplus Pets™ Calm</a></li>
-            <li><a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener">Care &amp; Comfort</a></li>
-            <li><a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener">Ahiflower® Oil</a></li>
+            <li><a href="https://ww1.lifeplus.com/es/es/product-details/3536/lifeplus-pets%AE-digest" target="_blank" rel="noopener">Lifeplus Pets™ Digest</a></li>
+            <li><a href="https://ww1.lifeplus.com/es/es/product-details/3534/lifeplus-pets%AE-calm" target="_blank" rel="noopener">Lifeplus Pets™ Calm</a></li>
+            <li><a href="https://ww1.lifeplus.com/es/es/product-details/3540/lifeplus-pets%AE-care-%26-comfort" target="_blank" rel="noopener">Care &amp; Comfort</a></li>
+            <li><a href="https://ww1.lifeplus.com/es/es/product-details/3545/lifeplus-pets%AE-ahiflower%AE-oil" target="_blank" rel="noopener">Ahiflower® Oil</a></li>
           </ul>
         </div>
 
@@ -2462,8 +2955,10 @@
             <li><a href="#inicio">Inicio</a></li>
             <li><a href="#productos">Productos</a></li>
             <li><a href="#para-quien">Para quién</a></li>
+            <li><a href="guia.html">Guía</a></li>
             <li><a href="#testimonios">Testimonios</a></li>
             <li><a href="#veterinarios">Veterinarios</a></li>
+            <li><a href="ventas/">Consola ventas</a></li>
             <li><a href="#faq">FAQ</a></li>
           </ul>
         </div>
@@ -2474,6 +2969,7 @@
           <ul class="footer-links">
             <li><a href="#veterinarios">Programa Partners</a></li>
             <li><a href="https://www.lifeplus.com/" target="_blank" rel="noopener">Tienda oficial</a></li>
+            <li><a href="guia.html">Guía complementaria</a></li>
             <li><a href="#faq">Preguntas frecuentes</a></li>
             <li><a href="#blog">Blog &amp; Educación</a></li>
           </ul>
@@ -2488,9 +2984,10 @@
           <p class="footer-disclaimer">
             ⚠️ Estos productos no están destinados a diagnosticar, tratar, curar ni prevenir ninguna enfermedad. Los suplementos son complementos nutricionales y no sustituyen el consejo veterinario profesional. Consulta siempre con tu veterinario antes de iniciar cualquier suplementación.
           </p>
+          
           <p class="footer-copyright">
             © 2026 LifePlus Pets España · LifePlus International<br>
-            Independent Member · LifePlus International
+            LifePlus Pets España
           </p>
         </div>
       </div>
@@ -2656,53 +3153,44 @@
     /* ==============================
        FORM SUBMIT — Formspree
     ============================== */
-    function handleFormSubmit(e) {
-      e.preventDefault();
-      const form = e.target;
-      const btn = form.querySelector('.form-submit');
-      const originalText = btn.textContent;
+    
 
-      btn.textContent = 'Enviando…';
-      btn.disabled = true;
+    // Keep this outside NEUTRO-REMOVE so it also works in la versión NEUTRA.
+    (function () {
+      const key = 'lpp_vet_video_t';
 
-      const data = {
-        name:    document.getElementById('vet-name').value,
-        clinic:  document.getElementById('vet-clinic').value,
-        email:   document.getElementById('vet-email').value,
-        phone:   document.getElementById('vet-phone').value,
-        message: document.getElementById('vet-message').value
-      };
+      function wire(id) {
+        const video = document.getElementById(id);
+        if (!video) return;
 
-      fetch('https://formspree.io/f/xzdkgodb', {
-        method: 'POST',
-        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
-        body: JSON.stringify(data)
-      })
-      .then(res => res.json())
-      .then(json => {
-        if (json.ok) {
-          btn.textContent = '✓ Solicitud enviada';
-          btn.style.background = 'rgba(56,142,60,0.85)';
-          form.reset();
-          setTimeout(() => {
-            btn.textContent = originalText;
-            btn.style.background = '';
-            btn.disabled = false;
-          }, 5000);
-        } else {
-          throw new Error(json.error || 'Error al enviar');
-        }
-      })
-      .catch(() => {
-        btn.textContent = 'Error — inténtalo de nuevo';
-        btn.style.background = 'rgba(200,0,0,0.7)';
-        setTimeout(() => {
-          btn.textContent = originalText;
-          btn.style.background = '';
-          btn.disabled = false;
-        }, 4000);
-      });
-    }
+        video.addEventListener('loadedmetadata', () => {
+          const raw = localStorage.getItem(key);
+          if (raw) {
+            const t = Number(raw);
+            if (Number.isFinite(t) && t > 0 && t < Math.max(0, video.duration - 0.75)) {
+              video.currentTime = t;
+            }
+          }
+
+          // Autoplay can be flaky after seeking; request play explicitly (allowed because muted).
+          if (video.autoplay) {
+            Promise.resolve(video.play()).catch(() => {});
+          }
+        });
+
+        video.addEventListener('timeupdate', () => {
+          if (!Number.isFinite(video.currentTime)) return;
+          if (video.currentTime > 0.5) localStorage.setItem(key, String(video.currentTime));
+        });
+
+        video.addEventListener('ended', () => {
+          localStorage.removeItem(key);
+        });
+      }
+
+      wire('vetVideoLeft');
+      wire('vetVideoRight');
+    })();
 
     /* ==============================
        SMOOTH SCROLL for anchor links
@@ -2743,6 +3231,44 @@
         el.classList.add('visible');
       });
     }, 800);
+
+    /* ==============================
+       HIDDEN CRM ACCESS (2s hold on logo)
+    ============================== */
+    (function () {
+      const logo = document.querySelector('.nav-logo');
+      if (!logo) return;
+
+      const HOLD_MS = 2000;
+      let timer = null;
+      let triggered = false;
+
+      function startHold() {
+        triggered = false;
+        clearTimeout(timer);
+        timer = setTimeout(() => {
+          triggered = true;
+          window.location.href = 'crm/';
+        }, HOLD_MS);
+      }
+
+      function endHold() {
+        clearTimeout(timer);
+      }
+
+      logo.addEventListener('pointerdown', startHold);
+      logo.addEventListener('pointerup', endHold);
+      logo.addEventListener('pointerleave', endHold);
+      logo.addEventListener('pointercancel', endHold);
+
+      logo.addEventListener('click', (event) => {
+        if (triggered) {
+          event.preventDefault();
+          event.stopPropagation();
+        }
+      });
+    })();
   </script>
+  <script src="assets/js/site-language.js"></script>
 </body>
 </html>

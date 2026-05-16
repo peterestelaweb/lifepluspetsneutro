@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>LifePlus Pets | Vídeos de producto</title>
+    <meta name="description" content="Vídeos de producto de LifePlus Pets para compartir en versión neutra, sin QR ni códigos de tienda." />
+    <style>
+      :root{--bg:#06110f;--panel:#0f2220;--panel2:#14312d;--text:#f4f7f6;--muted:#b9c8c3;--accent:#7dd6a3;--line:rgba(255,255,255,.09);--radius:22px;--shadow:0 18px 50px rgba(0,0,0,.28)}
+      *{box-sizing:border-box} body{margin:0;font-family:Inter,system-ui,sans-serif;background:radial-gradient(circle at top, rgba(125,214,163,.12), transparent 30%),var(--bg);color:var(--text)}
+      a{color:inherit;text-decoration:none} img,video{max-width:100%;display:block}
+      .wrap{width:min(1180px,calc(100% - 32px));margin:0 auto}
+      .top{padding:26px 0 16px}
+      .bar{display:flex;justify-content:space-between;align-items:center;gap:16px;padding:14px 18px;border:1px solid var(--line);border-radius:999px;background:rgba(255,255,255,.04);backdrop-filter:blur(10px)}
+      .brand{display:flex;align-items:center;gap:12px}
+      .mark{width:40px;height:40px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#7dd6a3,#2d7d59);font-weight:900;color:#03120e}
+      .brand small{display:block;color:var(--muted)}
+      .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:22px;padding:24px 0 12px}
+      .card,.video-card{background:linear-gradient(180deg, rgba(20,49,45,.92), rgba(15,34,32,.92));border:1px solid var(--line);border-radius:var(--radius);box-shadow:var(--shadow)}
+      .card{padding:28px}
+      .kicker{display:inline-flex;gap:8px;align-items:center;padding:7px 12px;border-radius:999px;background:rgba(125,214,163,.12);color:var(--accent);font-size:12px;font-weight:800;letter-spacing:.08em;text-transform:uppercase}
+      h1{margin:16px 0 12px;font-size:clamp(34px,4.8vw,58px);line-height:.96;letter-spacing:-.05em}
+      .lead{margin:0;color:var(--muted);font-size:18px;line-height:1.7}
+      .actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:22px}
+      .btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 18px;border-radius:999px;font-weight:800;font-size:14px;border:1px solid transparent}
+      .btn.primary{background:var(--accent);color:#052016}.btn.secondary{background:rgba(255,255,255,.05);border-color:var(--line)}
+      .stats{display:grid;gap:12px;padding:24px}
+      .stat{padding:16px;border-radius:18px;background:rgba(255,255,255,.04);border:1px solid var(--line)}
+      .stat strong{display:block;font-size:28px;line-height:1;margin-bottom:4px}
+      .section{padding:16px 0 34px}
+      .head{display:flex;justify-content:space-between;align-items:end;gap:16px;margin-bottom:18px}
+      .head h2{margin:6px 0 0;font-size:24px}
+      .grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:18px}
+      .video-card{overflow:hidden}
+      .media{aspect-ratio: 9/16;background:#0a0f0e}
+      .media img,.media video{width:100%;height:100%;object-fit:cover;background:#0a0f0e}
+      .body{padding:18px}
+      .tag{display:inline-block;padding:5px 10px;border-radius:999px;background:rgba(125,214,163,.12);color:var(--accent);font-size:12px;font-weight:800;text-transform:uppercase;letter-spacing:.06em}
+      h3{margin:12px 0 8px;font-size:20px}
+      p{margin:0;color:var(--muted);line-height:1.6}
+      .row{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+      .link{display:inline-flex;align-items:center;justify-content:center;padding:10px 12px;border-radius:999px;border:1px solid var(--line);background:rgba(255,255,255,.04);font-weight:800;font-size:13px}
+      .link.primary{background:var(--accent);color:#052016;border-color:transparent}
+      .footer{padding:24px 0 38px;color:var(--muted);font-size:13px}
+      @media (max-width: 980px){.hero,.grid{grid-template-columns:1fr}}
+      @media (max-width: 640px){.card,.body{padding:18px}.bar{border-radius:24px}.head{flex-direction:column;align-items:flex-start} h1{font-size:36px}}
+    </style>
+  </head>
+  <body>
+    <div class="wrap top">
+      <header class="bar">
+        <a class="brand" href="/" aria-label="Volver a LifePlus Pets">
+          <div class="mark">+</div>
+          <div><strong>LifePlus Pets</strong><small>Vídeos de producto - versión neutra</small></div>
+        </a>
+        <a class="btn secondary" href="https://www.lifeplus.com/" target="_blank" rel="noreferrer">Abrir web</a>
+      </header>
+
+      <div class="hero">
+        <section class="card">
+          <span class="kicker">Material compartible</span>
+          <h1>Vídeos listos para compartir en versión neutra</h1>
+          <p class="lead">Misma presentación limpia, sin códigos QR ni elementos de tienda. Esta versión usa los vídeos originales de Netlify y te sirve para enviar el catálogo sin referencias comerciales añadidas.</p>
+          <div class="actions">
+            <a class="btn primary" href="#videos">Ver vídeos</a>
+            <a class="btn secondary" href="https://www.lifeplus.com/" target="_blank" rel="noreferrer">Ir a LifePlus</a>
+          </div>
+        </section>
+        <aside class="card stats">
+          <div class="stat"><strong>6</strong><span>vídeos originales</span></div>
+          <div class="stat"><strong>0</strong><span>QR o códigos de tienda</span></div>
+          <div class="stat"><strong>1</strong><span>enlace para compartir</span></div>
+        </aside>
+      </div>
+    </div>
+
+    <main class="wrap section" id="videos">
+      <div class="head">
+        <div><span class="kicker" style="margin:0;">Catálogo neutro</span><h2>Selecciona el vídeo según la conversación</h2></div>
+        <p>Los vídeos salen desde la versión original de Netlify; las imágenes son versiones limpias sin QR.</p>
+      </div>
+      <div class="grid" id="grid"></div>
+    </main>
+
+    <footer class="wrap footer">LifePlus Pets · versión neutra para compartir</footer>
+
+    <script>
+      const items = [
+        { tag:'Digest', title:'Digest Support', desc:'Salud digestiva para tu mascota', video:'https://lifeplus-pets-videos.netlify.app/lifeplus_digest.mp4', poster:'./media/posters/digest.jpg' },
+        { tag:'Biscuits', title:'Healthy Biscuits', desc:'Galletas naturales y saludables', video:'https://lifeplus-pets-videos.netlify.app/lifeplus_biscuits.mp4', poster:'./media/posters/biscuits.jpg' },
+        { tag:'Ahiflower', title:'Ahiflower Oil', desc:'Aceite omega esencial', video:'https://lifeplus-pets-videos.netlify.app/lifeplus_ahiflower.mp4', poster:'./media/posters/ahiflower.jpg' },
+        { tag:'Joint', title:'Joint Support', desc:'Articulaciones fuertes y sanas', video:'https://lifeplus-pets-videos.netlify.app/lifeplus_joint.mp4', poster:'./media/posters/joint.jpg' },
+        { tag:'Calming', title:'Calming Aid', desc:'Relajación natural para tu mascota', video:'https://lifeplus-pets-videos.netlify.app/lifeplus_calming.mp4', poster:'./media/posters/calming.jpg' },
+        { tag:'Multi', title:'Multivitamin', desc:'Vitaminas completas diarias', video:'https://lifeplus-pets-videos.netlify.app/lifeplus_multivitamin.mp4', poster:'./media/posters/multivitamin.jpg' }
+      ];
+      document.getElementById('grid').innerHTML = items.map(item => `
+        <article class="video-card">
+          <div class="media">
+            <video controls playsinline preload="metadata" poster="${item.poster}"><source src="${item.video}" type="video/mp4"></video>
+          </div>
+          <div class="body">
+            <span class="tag">${item.tag}</span>
+            <h3>${item.title}</h3>
+            <p>${item.desc}</p>
+            <div class="row">
+              <a class="link primary" href="${item.video}" target="_blank" rel="noreferrer">Abrir vídeo</a>
+              <a class="link" href="${item.video}" download>Descargar</a>
+            </div>
+          </div>
+        </article>
+      `).join('');
+    </script>
+  </body>
+</html>

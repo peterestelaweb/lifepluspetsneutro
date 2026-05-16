@@ -1,0 +1,1530 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Guía práctica LifePlus Pets</title>
+  <meta
+    name="description"
+    content="Guía práctica de LifePlus Pets con resumen general, fichas por producto, pautas de uso y acceso rápido a la información complementaria."
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --green-deep: #1b5e3b;
+      --green-lime: #8bc34a;
+      --green-soft: #2e7d52;
+      --text-dark: #10241a;
+      --text-body: #355647;
+      --muted: #688274;
+      --cream: #f7f2e7;
+      --cream-strong: #ece4d0;
+      --paper: #fffdf8;
+      --white: #ffffff;
+      --line: rgba(16, 36, 26, 0.12);
+      --shadow-lg: 0 28px 80px rgba(16, 36, 26, 0.14);
+      --shadow-md: 0 18px 40px rgba(16, 36, 26, 0.10);
+      --radius-xl: 28px;
+      --radius-lg: 22px;
+      --radius-md: 16px;
+      --max-width: 1240px;
+      --sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      --serif: "Iowan Old Style", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text-dark);
+      background:
+        radial-gradient(circle at top left, rgba(139,195,74,0.12), transparent 22%),
+        linear-gradient(180deg, #fbf7ef 0%, #f4ede0 100%);
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .container {
+      width: min(calc(100% - 40px), var(--max-width));
+      margin: 0 auto;
+    }
+
+    .site-topbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      backdrop-filter: blur(18px);
+      background: rgba(247,242,231,0.82);
+      border-bottom: 1px solid rgba(16,36,26,0.08);
+    }
+
+    .site-topbar-inner {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 16px;
+      min-height: 74px;
+    }
+
+    .brand {
+      display: inline-flex;
+      align-items: center;
+      gap: 14px;
+      min-width: 0;
+    }
+
+    .brand-mark {
+      width: 42px;
+      height: 42px;
+      border-radius: 14px;
+      display: grid;
+      place-items: center;
+      color: var(--white);
+      background: linear-gradient(135deg, var(--green-deep), var(--green-soft));
+      font-size: 26px;
+      font-weight: 800;
+      box-shadow: inset 0 1px 0 rgba(255,255,255,0.16);
+    }
+
+    .brand-label {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+      min-width: 0;
+    }
+
+    .brand-label strong {
+      font-size: 15px;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-label span {
+      color: var(--muted);
+      font-size: 12px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .topbar-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .lang-switcher {
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px;
+      border-radius: 999px;
+      background: rgba(27,94,59,0.07);
+      border: 1px solid rgba(16,36,26,0.08);
+      backdrop-filter: blur(10px);
+    }
+
+    .lang-switcher button {
+      border: none;
+      background: transparent;
+      color: var(--muted);
+      font-size: 11px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      padding: 9px 12px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: transform 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .lang-switcher button:hover,
+    .lang-switcher button:focus-visible {
+      background: rgba(27,94,59,0.08);
+      color: var(--green-deep);
+      outline: none;
+    }
+
+    .lang-switcher button.is-active {
+      background: var(--green-deep);
+      color: var(--white);
+      box-shadow: 0 10px 22px rgba(16,36,26,0.12);
+    }
+
+    .lang-switcher button[lang="ar"] {
+      font-family: 'Cairo', sans-serif;
+      text-transform: none;
+      letter-spacing: 0;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      border-radius: 999px;
+      padding: 13px 20px;
+      font-size: 14px;
+      font-weight: 700;
+      transition: transform 180ms ease, box-shadow 180ms ease, background 180ms ease, color 180ms ease;
+    }
+
+    .btn:hover {
+      transform: translateY(-1px);
+    }
+
+    .btn-primary {
+      color: var(--text-dark);
+      background: var(--green-lime);
+      box-shadow: 0 12px 24px rgba(139,195,74,0.24);
+    }
+
+    .btn-ghost {
+      color: var(--green-deep);
+      background: rgba(27,94,59,0.08);
+      border: 1px solid rgba(27,94,59,0.10);
+    }
+
+    .hero {
+      padding: 58px 0 34px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.05fr) minmax(320px, 0.95fr);
+      gap: 48px;
+      align-items: center;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(27,94,59,0.07);
+      color: var(--green-deep);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      margin-bottom: 22px;
+    }
+
+    .eyebrow::before {
+      content: '';
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--green-lime);
+      box-shadow: 0 0 0 6px rgba(139,195,74,0.14);
+    }
+
+    .hero h1 {
+      margin: 0 0 18px;
+      font-family: var(--serif);
+      font-size: clamp(46px, 7vw, 84px);
+      line-height: 0.94;
+      letter-spacing: -0.05em;
+      max-width: 9ch;
+    }
+
+    .hero p {
+      margin: 0 0 28px;
+      max-width: 58ch;
+      font-size: 18px;
+      line-height: 1.75;
+      color: var(--text-body);
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 30px;
+    }
+
+    .hero-notes {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+
+    .hero-note {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 11px 14px;
+      border-radius: 999px;
+      color: var(--muted);
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(16,36,26,0.08);
+      font-size: 13px;
+      font-weight: 600;
+      box-shadow: 0 12px 32px rgba(16,36,26,0.06);
+    }
+
+    .hero-note strong {
+      color: var(--green-deep);
+    }
+
+    .book-stage {
+      position: relative;
+      perspective: 1800px;
+      max-width: 460px;
+      margin-left: auto;
+    }
+
+    .book-stage::before,
+    .book-stage::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      border-radius: 32px;
+      transform-origin: left center;
+    }
+
+    .book-stage::before {
+      background: rgba(27,94,59,0.10);
+      transform: translate(18px, 18px) rotate(5deg);
+    }
+
+    .book-stage::after {
+      background: rgba(27,94,59,0.06);
+      transform: translate(9px, 8px) rotate(2.5deg);
+    }
+
+    .book-card {
+      position: relative;
+      z-index: 1;
+      min-height: 540px;
+      padding: 34px;
+      border-radius: 32px;
+      color: var(--white);
+      background:
+        linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.04)),
+        radial-gradient(circle at top right, rgba(255,255,255,0.14), transparent 34%),
+        linear-gradient(160deg, #0e3d27 0%, #1b5e3b 56%, #2e7d52 100%);
+      box-shadow: var(--shadow-lg);
+      overflow: hidden;
+      transform: rotateY(-8deg) rotateX(2deg);
+    }
+
+    .book-card::before {
+      content: '';
+      position: absolute;
+      inset: 18px;
+      border-radius: 24px;
+      border: 1px solid rgba(255,255,255,0.16);
+      pointer-events: none;
+    }
+
+    .book-card::after {
+      content: '';
+      position: absolute;
+      top: 24px;
+      right: -60px;
+      width: 220px;
+      height: 220px;
+      border-radius: 50%;
+      background: rgba(255,255,255,0.10);
+    }
+
+    .book-card small {
+      position: relative;
+      z-index: 1;
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+    }
+
+    .book-card h2 {
+      position: relative;
+      z-index: 1;
+      margin: 24px 0 16px;
+      font-size: clamp(42px, 6vw, 68px);
+      line-height: 0.92;
+      letter-spacing: -0.05em;
+      max-width: 6ch;
+    }
+
+    .book-card p {
+      position: relative;
+      z-index: 1;
+      margin: 0 0 26px;
+      color: rgba(255,255,255,0.78);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 28ch;
+    }
+
+    .book-pills {
+      position: relative;
+      z-index: 1;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-bottom: 28px;
+    }
+
+    .book-pills span {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.82);
+      font-size: 12px;
+      font-weight: 700;
+    }
+
+    .book-foot {
+      position: relative;
+      z-index: 1;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+
+    .book-foot strong {
+      display: block;
+      font-size: 26px;
+      margin-bottom: 4px;
+    }
+
+    .book-foot span {
+      display: block;
+      color: rgba(255,255,255,0.72);
+      font-size: 12px;
+      line-height: 1.45;
+    }
+
+    .quick-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 16px;
+      margin: 14px 0 54px;
+    }
+
+    .quick-card {
+      padding: 22px 20px;
+      border-radius: var(--radius-lg);
+      background: rgba(255,255,255,0.82);
+      border: 1px solid rgba(16,36,26,0.08);
+      box-shadow: 0 12px 28px rgba(16,36,26,0.06);
+    }
+
+    .quick-card strong {
+      display: block;
+      font-size: 28px;
+      margin-bottom: 8px;
+      color: var(--green-deep);
+    }
+
+    .quick-card span {
+      display: block;
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.5;
+    }
+
+    .content-shell {
+      display: grid;
+      grid-template-columns: 270px minmax(0, 1fr);
+      gap: 34px;
+      padding-bottom: 84px;
+    }
+
+    .toc {
+      position: sticky;
+      top: 100px;
+      align-self: start;
+      padding: 22px 20px;
+      border-radius: 24px;
+      background: rgba(255,255,255,0.78);
+      border: 1px solid rgba(16,36,26,0.08);
+      box-shadow: 0 18px 44px rgba(16,36,26,0.08);
+    }
+
+    .toc h3 {
+      margin: 0 0 12px;
+      font-size: 13px;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: var(--muted);
+    }
+
+    .toc-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .toc-links a {
+      display: block;
+      padding: 10px 12px;
+      border-radius: 14px;
+      color: var(--text-body);
+      font-size: 14px;
+      font-weight: 600;
+      transition: background 160ms ease, color 160ms ease, transform 160ms ease;
+    }
+
+    .toc-links a:hover {
+      background: rgba(27,94,59,0.08);
+      color: var(--green-deep);
+      transform: translateX(2px);
+    }
+
+    .content-main {
+      display: grid;
+      gap: 26px;
+    }
+
+    .panel {
+      padding: 28px;
+      border-radius: 28px;
+      background: rgba(255,255,255,0.88);
+      border: 1px solid rgba(16,36,26,0.08);
+      box-shadow: 0 20px 52px rgba(16,36,26,0.06);
+    }
+
+    .panel h2,
+    .panel h3 {
+      margin: 0 0 12px;
+      font-family: var(--serif);
+      line-height: 1.02;
+      letter-spacing: -0.04em;
+    }
+
+    .panel h2 {
+      font-size: clamp(34px, 5vw, 52px);
+    }
+
+    .panel h3 {
+      font-size: clamp(28px, 4vw, 40px);
+    }
+
+    .panel-lead {
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text-body);
+      margin: 0 0 20px;
+      max-width: 68ch;
+    }
+
+    .summary-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+    }
+
+    .summary-card {
+      padding: 18px 18px 16px;
+      border-radius: 20px;
+      background: linear-gradient(180deg, #f9f6ef 0%, #f3ebdb 100%);
+      border: 1px solid rgba(16,36,26,0.08);
+    }
+
+    .summary-card strong {
+      display: block;
+      margin-bottom: 8px;
+      font-size: 18px;
+      color: var(--green-deep);
+    }
+
+    .summary-card p {
+      margin: 0;
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .table-wrap {
+      overflow-x: auto;
+      margin-top: 18px;
+      border-radius: 20px;
+      border: 1px solid rgba(16,36,26,0.08);
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      min-width: 720px;
+      background: var(--paper);
+    }
+
+    th,
+    td {
+      padding: 15px 16px;
+      border-bottom: 1px solid rgba(16,36,26,0.08);
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+      line-height: 1.55;
+    }
+
+    th {
+      background: #f2ebdd;
+      color: var(--green-deep);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    td strong {
+      color: var(--text-dark);
+    }
+
+    .product {
+      display: grid;
+      grid-template-columns: 220px minmax(0, 1fr);
+      gap: 28px;
+      align-items: start;
+    }
+
+    .product-media {
+      position: sticky;
+      top: 110px;
+      align-self: start;
+    }
+
+    .product-media-card {
+      padding: 18px;
+      border-radius: 24px;
+      background: linear-gradient(180deg, #f7f2e7 0%, #efe6d3 100%);
+      border: 1px solid rgba(16,36,26,0.08);
+    }
+
+    .product-media-card img {
+      width: 100%;
+      aspect-ratio: 1 / 1;
+      object-fit: contain;
+      mix-blend-mode: multiply;
+    }
+
+    .product-code {
+      margin-top: 12px;
+      color: var(--muted);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      text-align: center;
+    }
+
+    .product-tag {
+      display: inline-flex;
+      align-items: center;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(27,94,59,0.08);
+      color: var(--green-deep);
+      font-size: 12px;
+      font-weight: 800;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 16px;
+    }
+
+    .product-body p {
+      margin: 0 0 16px;
+      color: var(--text-body);
+      font-size: 16px;
+      line-height: 1.8;
+    }
+
+    .detail-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 18px;
+    }
+
+    .detail-card {
+      padding: 18px;
+      border-radius: 18px;
+      background: rgba(16,36,26,0.03);
+      border: 1px solid rgba(16,36,26,0.08);
+    }
+
+    .detail-card strong {
+      display: block;
+      margin-bottom: 8px;
+      color: var(--green-deep);
+      font-size: 15px;
+    }
+
+    .detail-card ul {
+      margin: 0;
+      padding-left: 18px;
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.65;
+    }
+
+    .note-card {
+      margin-top: 18px;
+      padding: 18px 20px;
+      border-radius: 18px;
+      background: linear-gradient(135deg, rgba(139,195,74,0.18), rgba(139,195,74,0.08));
+      border: 1px solid rgba(139,195,74,0.34);
+      color: var(--text-body);
+      font-size: 14px;
+      line-height: 1.7;
+      box-shadow: 0 8px 22px rgba(16, 24, 40, 0.05);
+    }
+
+    .note-card strong {
+      color: var(--green-deep);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+
+    .app-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 240px;
+      gap: 24px;
+      align-items: start;
+    }
+
+    .app-rail {
+      padding: 18px;
+      border-radius: 22px;
+      background: linear-gradient(180deg, #1b5e3b 0%, #0f3d27 100%);
+      color: var(--white);
+      box-shadow: var(--shadow-md);
+    }
+
+    .app-rail strong {
+      display: block;
+      font-size: 30px;
+      margin-bottom: 10px;
+      letter-spacing: -0.04em;
+    }
+
+    .app-rail p {
+      margin: 0 0 12px;
+      color: rgba(255,255,255,0.76);
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .app-rail span {
+      display: inline-flex;
+      padding: 7px 11px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.10);
+      font-size: 12px;
+      font-weight: 700;
+      margin: 6px 6px 0 0;
+    }
+
+    .final-cta {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+
+    .final-cta p {
+      margin: 0;
+      color: var(--text-body);
+      font-size: 16px;
+      line-height: 1.7;
+      max-width: 60ch;
+    }
+
+    .disclaimer {
+      color: var(--muted);
+      font-size: 13px;
+      line-height: 1.7;
+      margin-top: 16px;
+    }
+
+    .inline-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px;
+    }
+
+    @media (max-width: 1080px) {
+      .hero-grid,
+      .content-shell,
+      .product,
+      .app-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .book-stage {
+        max-width: none;
+        margin-left: 0;
+      }
+
+      .toc,
+      .product-media {
+        position: static;
+      }
+
+      .quick-grid,
+      .summary-grid,
+      .detail-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+    }
+
+    @media (max-width: 720px) {
+      .site-topbar-inner {
+        padding: 10px 0;
+        align-items: flex-start;
+      }
+
+      .topbar-actions {
+        width: 100%;
+        justify-content: flex-start;
+      }
+
+      .lang-switcher {
+        order: -1;
+      }
+
+      .hero {
+        padding-top: 38px;
+      }
+
+      .book-card {
+        min-height: auto;
+        padding: 28px;
+      }
+
+      .quick-grid,
+      .summary-grid,
+      .detail-grid,
+      .book-foot {
+        grid-template-columns: 1fr;
+      }
+
+      .panel {
+        padding: 22px;
+      }
+    }
+
+    /* ===========================
+       FOOTER
+    =========================== */
+    .footer {
+      margin-top: 64px;
+      background: var(--text-dark);
+      color: rgba(255,255,255,0.78);
+      border-top: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .footer-inner {
+      padding: 28px 0;
+      display: flex;
+      align-items: flex-start;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .footer-copy {
+      font-size: 12px;
+      line-height: 1.6;
+      max-width: 64ch;
+      color: rgba(255,255,255,0.55);
+    }
+
+    .footer-copy a {
+      color: rgba(255,255,255,0.82);
+      text-decoration: underline;
+      text-underline-offset: 3px;
+    }
+
+    .footer-video-wrap {
+      width: min(320px, 100%);
+      flex: 0 1 320px;
+      border-radius: 18px;
+      overflow: hidden;
+      border: 1px solid rgba(255,255,255,0.10);
+      background: rgba(255,255,255,0.04);
+      box-shadow: 0 16px 36px rgba(0,0,0,0.28);
+    }
+
+    .footer-video {
+      display: block;
+      width: 100%;
+      height: auto;
+    }
+
+    html[dir="rtl"] body {
+      font-family: 'Cairo', system-ui, sans-serif;
+    }
+
+    html[dir="rtl"] .site-topbar-inner,
+    html[dir="rtl"] .topbar-actions,
+    html[dir="rtl"] .hero-actions,
+    html[dir="rtl"] .hero-notes,
+    html[dir="rtl"] .toc-links,
+    html[dir="rtl"] .inline-actions,
+    html[dir="rtl"] .footer-inner {
+      direction: rtl;
+    }
+
+    html[dir="rtl"] .hero,
+    html[dir="rtl"] .panel,
+    html[dir="rtl"] .product-body,
+    html[dir="rtl"] .toc,
+    html[dir="rtl"] .summary-card,
+    html[dir="rtl"] .detail-card,
+    html[dir="rtl"] .final-cta,
+    html[dir="rtl"] .footer-copy {
+      text-align: right;
+    }
+  </style>
+</head>
+<body data-page="guide" data-locale="es">
+  <div class="site-topbar">
+    <div class="container site-topbar-inner">
+      <a href="index.html" class="brand">
+        <span class="brand-mark">+</span>
+        <span class="brand-label">
+          <strong>LifePlus Pets</strong>
+          <span>Guía práctica</span>
+        </span>
+      </a>
+
+      <div class="topbar-actions">
+        <div class="lang-switcher" aria-label="Selector de idioma">
+          <button type="button" class="is-active" data-lang="es">ES</button>
+          <button type="button" data-lang="en">EN</button>
+          <button type="button" data-lang="ar" lang="ar">العربية</button>
+        </div>
+        <a href="index.html" class="btn btn-ghost">Volver a la home</a>
+        <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="btn btn-primary">Comprar</a>
+      </div>
+    </div>
+  </div>
+
+  <section class="hero">
+    <div class="container hero-grid">
+      <div>
+        <span class="eyebrow">Guía complementaria basada en el dossier</span>
+        <h1>Todo LifePlus Pets, ordenado para leer mejor.</h1>
+        <p>
+          Esta guía transforma el PDF en una lectura web más clara: qué hace cada producto, qué ingredientes destacan,
+          cómo se aplica y qué pautas rápidas conviene tener a mano antes de elegir una rutina para tu perro.
+        </p>
+
+        <div class="hero-actions">
+          <a href="#resumen" class="btn btn-primary">Empezar por el resumen</a>
+          <a href="#productos" class="btn btn-ghost">Ir a las fichas</a>
+          
+        </div>
+
+        <div class="hero-notes">
+          <span class="hero-note"><strong>7 capítulos</strong> con navegación directa</span>
+          <span class="hero-note"><strong>17 páginas</strong> condensadas en formato web</span>
+          <span class="hero-note"><strong>Uso rápido</strong> en móvil y escritorio</span>
+        </div>
+      </div>
+
+      <div class="book-stage" aria-hidden="true">
+        <div class="book-card">
+          <small>Edición web del dossier</small>
+          <h2>Pets Información</h2>
+          <p>
+            De la visión general a cada ficha de producto: calma, digestión, movilidad, premios funcionales,
+            cuidado del pelaje, protección externa y la app de entrenamiento y bienestar.
+          </p>
+
+          <div class="book-pills">
+            <span>Calm</span>
+            <span>Digest</span>
+            <span>Move</span>
+            <span>Biscuits</span>
+            <span>Ahiflower Oil</span>
+            <span>Care &amp; Comfort</span>
+            <span>App Pets</span>
+          </div>
+
+          <div class="book-foot">
+            <div>
+              <strong>6</strong>
+              <span>productos físicos con ficha resumida</span>
+            </div>
+            <div>
+              <strong>1</strong>
+              <span>app con bienestar, entrenamiento y comunidad</span>
+            </div>
+            <div>
+              <strong>100%</strong>
+              <span>lectura web, sin zoom incómodo ni visor pesado</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="container">
+    <section class="quick-grid" aria-label="Resumen rápido">
+      <div class="quick-card">
+        <strong>Calma</strong>
+        <span>Apoyo al equilibrio conductual y a momentos de estrés puntual.</span>
+      </div>
+      <div class="quick-card">
+        <strong>Digestión</strong>
+        <span>Soporte digestivo diario con fibra, calostro y apoyo al microbioma.</span>
+      </div>
+      <div class="quick-card">
+        <strong>Movilidad</strong>
+        <span>Ingredientes pensados para articulaciones, flexibilidad y actividad.</span>
+      </div>
+      <div class="quick-card">
+        <strong>Cuidado integral</strong>
+        <span>Premios funcionales, aceite para piel y pelaje, spray externo y app.</span>
+      </div>
+    </section>
+  </div>
+
+  <div class="container content-shell">
+    <aside class="toc">
+      <h3>Navegación</h3>
+      <div class="toc-links">
+        <a href="#resumen">Resumen general</a>
+        <a href="#tabla">Tabla rápida</a>
+        <a href="#calm">Calm</a>
+        <a href="#digest">Digest</a>
+        <a href="#move">Move</a>
+        <a href="#biscuits">Peanut Butter Biscuits</a>
+        <a href="#ahiflower">Ahiflower Oil</a>
+        <a href="#care-comfort">Care &amp; Comfort</a>
+        <a href="#app-pets">App Pets</a>
+        <a href="#cierre">Cómo seguir</a>
+      </div>
+    </aside>
+
+    <main class="content-main">
+      <section class="panel" id="resumen">
+        <h2>Una línea pensada como apoyo al bienestar diario.</h2>
+        <p class="panel-lead">
+          El dossier presenta LifePlus Pets como una gama de apoyo no terapéutico, formulada con ingredientes naturales,
+          densidad nutricional alta y aplicaciones sencillas. La lógica del catálogo es clara: acompañar digestión, estrés,
+          movilidad, piel y pelaje, protección externa y hábitos cotidianos con una lectura más funcional que médica.
+        </p>
+
+        <div class="summary-grid">
+          <div class="summary-card">
+            <strong>Enfoque de uso</strong>
+            <p>Productos para integrar en la rutina, no para sustituir diagnóstico o tratamiento veterinario.</p>
+          </div>
+          <div class="summary-card">
+            <strong>Formato práctico</strong>
+            <p>Masticables, snacks, aceite, spray y app: opciones fáciles de aplicar según necesidad.</p>
+          </div>
+          <div class="summary-card">
+            <strong>Ingredientes repetidos</strong>
+            <p>Ahiflower®, calostro, fibra, glucosamina, MSM, cúrcuma y aceites esenciales aparecen como ejes del catálogo.</p>
+          </div>
+          <div class="summary-card">
+            <strong>Lectura recomendada</strong>
+            <p>Empieza por la tabla rápida y luego baja a la ficha del producto que más encaje con el momento de tu perro.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="tabla">
+        <h3>Tabla rápida de consulta</h3>
+        <p class="panel-lead">
+          Vista de un vistazo para comparar qué cubre cada referencia y cuál es la pauta general de uso mencionada en el dossier.
+        </p>
+
+        <div class="table-wrap">
+          <table>
+            <thead>
+              <tr>
+                <th>Producto</th>
+                <th>Para qué se usa</th>
+                <th>Formato</th>
+                <th>Pauta resumida</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Calm</strong></td>
+                <td>Apoyo al equilibrio y a situaciones de estrés sin efecto sedante.</td>
+                <td>Masticable blando</td>
+                <td>1 masticable al día por cada 9 kg de peso corporal.</td>
+              </tr>
+              <tr>
+                <td><strong>Digest</strong></td>
+                <td>Apoya digestión, flora intestinal y bienestar digestivo diario.</td>
+                <td>Masticable blando</td>
+                <td>1 masticable al día por cada 9 kg de peso corporal.</td>
+              </tr>
+              <tr>
+                <td><strong>Move</strong></td>
+                <td>Movilidad, articulaciones y soporte locomotor en distintas etapas.</td>
+                <td>Masticable blando</td>
+                <td>1 masticable al día por cada 9 kg de peso corporal.</td>
+              </tr>
+              <tr>
+                <td><strong>Peanut Butter Biscuits</strong></td>
+                <td>Premio funcional con grasas saludables, proteína y fibra.</td>
+                <td>Snack / galleta</td>
+                <td>1 galleta aporta aproximadamente 32 kcal.</td>
+              </tr>
+              <tr>
+                <td><strong>Ahiflower Oil</strong></td>
+                <td>Apoyo a piel, pelaje y protección antioxidante.</td>
+                <td>Aceite / spray oral</td>
+                <td>1 pulverización al día por cada 2 kg de peso corporal.</td>
+              </tr>
+              <tr>
+                <td><strong>Care &amp; Comfort</strong></td>
+                <td>Protección externa frente a insectos y apoyo calmante para piel y pelaje.</td>
+                <td>Spray tópico</td>
+                <td>Rociar generosamente el pelaje y reaplicar según necesidad.</td>
+              </tr>
+              <tr>
+                <td><strong>App Pets</strong></td>
+                <td>Entrenamiento, mindfulness, yoga, recetas y comunidad.</td>
+                <td>App</td>
+                <td>Suscripción mensual o anual.</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section class="panel product" id="productos">
+        <div class="product-media">
+          <div class="product-media-card">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3534_1.jpg" alt="LifePlus Pets Calm" loading="lazy" />
+            <div class="product-code">Mapa rápido del catálogo</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Cómo leer las fichas</span>
+          <h3>De la necesidad al producto sin perder tiempo.</h3>
+          <p>
+            Cada ficha baja a cuatro capas de lectura: qué momento cubre, qué ingredientes son los protagonistas,
+            cómo se usa de forma general y qué matiz conviene recordar antes de comprar o introducir el producto en la rutina.
+          </p>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <strong>1. Problema o momento</strong>
+              <ul>
+                <li>Estrés puntual</li>
+                <li>Digestión delicada</li>
+                <li>Articulaciones y actividad</li>
+                <li>Piel, pelaje o insectos</li>
+              </ul>
+            </div>
+            <div class="detail-card">
+              <strong>2. Formato y constancia</strong>
+              <ul>
+                <li>Masticables para rutina diaria</li>
+                <li>Snacks para recompensa</li>
+                <li>Aceites y sprays para apoyo práctico</li>
+                <li>App como capa de hábitos y bienestar</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel product" id="calm">
+        <div class="product-media">
+          <div class="product-media-card">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3534_1.jpg" alt="LifePlus Pets Calm" loading="lazy" />
+            <div class="product-code">Art. 3534 · Solo perros</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Calm</span>
+          <h3>Calma práctica para cambios de rutina, visitas o fuegos artificiales.</h3>
+          <p>
+            El dossier presenta Calm como un masticable blando orientado a apoyar la tranquilidad y el equilibrio del comportamiento,
+            especialmente en momentos de estrés. La propuesta evita el tono sedante y lo coloca como apoyo funcional para que el perro se adapte mejor.
+          </p>
+          <p>
+            Encaja bien cuando el dueño necesita una ayuda sencilla de entender: no busca cambiar al perro, sino acompañar mejor
+            situaciones concretas que alteran su rutina. Es una ficha muy útil para hablar de adaptación, convivencia y manejo diario.
+          </p>
+          <div class="note-card">
+            <strong>Cómo se toma:</strong> 1 masticable al día por cada 9 kg (20 lbs) de peso corporal, añadido a la alimentación normal.
+          </div>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <strong>Ingredientes destacados</strong>
+              <ul>
+                <li>C10 Calming Colostrum Complex™</li>
+                <li>Tiamina</li>
+                <li>L-teanina</li>
+                <li>Prebiótico MOS MAX™</li>
+                <li>Aceite y semilla de Ahiflower®</li>
+              </ul>
+            </div>
+            <div class="detail-card">
+              <strong>Uso resumido</strong>
+              <ul>
+                <li>Para perros</li>
+                <li>1 masticable diario por cada 9 kg</li>
+                <li>Interesante en tormentas, visitas al veterinario o cambios de entorno</li>
+                <li>Formato: 90 gominolas</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note-card">
+            Si el problema principal es ansiedad puntual o adaptación a estímulos concretos, este es el punto de entrada más claro del catálogo.
+            Conviene explicarlo como apoyo al equilibrio, no como sustituto de un plan de manejo.
+          </div>
+        </div>
+      </section>
+
+      <section class="panel product" id="digest">
+        <div class="product-media">
+          <div class="product-media-card">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3536_1.jpg" alt="LifePlus Pets Digest" loading="lazy" />
+            <div class="product-code">Art. 3536 · Solo perros</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Digest</span>
+          <h3>Una ficha centrada en microbioma, fibra y digestión cómoda.</h3>
+          <p>
+            Digest está orientado a perros que necesitan apoyo digestivo regular. El dossier insiste en intestino equilibrado,
+            absorción de nutrientes y bienestar general, con una fórmula que mezcla fibra, calostro y grasas saludables.
+          </p>
+          <p>
+            Es la opción que mejor encaja cuando quieres sostener la rutina diaria de digestión sin irte a un enfoque puntual.
+            En la práctica, funciona bien como producto de mantenimiento para perros con digestión sensible o para hogares
+            que quieren una referencia clara y constante dentro del catálogo.
+          </p>
+          <div class="note-card">
+            <strong>Cómo se toma:</strong> 1 masticable al día por cada 9 kg (20 lbs) de peso corporal, añadido a la alimentación normal.
+          </div>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <strong>Ingredientes destacados</strong>
+              <ul>
+                <li>MOS MAX</li>
+                <li>Aceite y semilla micronizada de Ahiflower®</li>
+                <li>Calostro inmunológico</li>
+                <li>Calostro calmante y neuronal</li>
+                <li>Base de batata y calabaza</li>
+              </ul>
+            </div>
+            <div class="detail-card">
+              <strong>Uso resumido</strong>
+              <ul>
+                <li>1 masticable diario por cada 9 kg</li>
+                <li>Formato: 90 gominolas</li>
+                <li>Pensado para rutina continua más que para uso puntual</li>
+                <li>Apoya digestión, flora y absorción</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note-card">
+            Si el objetivo es apoyar digestión y tolerancia diaria, Digest es la referencia más directa del dossier.
+            También ayuda a ordenar el mensaje comercial: no se presenta como capricho, sino como parte de la rutina.
+          </div>
+        </div>
+      </section>
+
+      <section class="panel product" id="move">
+        <div class="product-media">
+          <div class="product-media-card">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3535_1.jpg" alt="LifePlus Pets Move" loading="lazy" />
+            <div class="product-code">Art. 3535 · Solo perros</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Move</span>
+          <h3>Movilidad y articulaciones con un enfoque preventivo y de soporte.</h3>
+          <p>
+            Move aparece como la ficha para perros activos, seniors o en etapas donde conviene acompañar el aparato locomotor.
+            El lenguaje del PDF mezcla apoyo a articulaciones, flexibilidad y movimiento general.
+          </p>
+          <p>
+            La lectura comercial es muy clara: sirve para mantener confort y continuidad en el movimiento cuando el perro no necesita
+            un discurso técnico, sino un soporte diario fácil de entender por el tutor.
+          </p>
+          <div class="note-card">
+            <strong>Cómo se toma:</strong> 1 masticable al día por cada 9 kg (20 lbs) de peso corporal, añadido a la alimentación normal.
+          </div>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <strong>Ingredientes destacados</strong>
+              <ul>
+                <li>GlucosaGreen® como fuente vegana de glucosamina</li>
+                <li>MSM</li>
+                <li>Resistor 24-7</li>
+                <li>Cúrcuma</li>
+                <li>Omega 3, 6 y 9 de Ahiflower®</li>
+              </ul>
+            </div>
+            <div class="detail-card">
+              <strong>Uso resumido</strong>
+              <ul>
+                <li>1 masticable diario por cada 9 kg</li>
+                <li>Formato: 90 gominolas</li>
+                <li>Pensado para apoyar flexibilidad y confort</li>
+                <li>Útil en perros muy activos o de más edad</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note-card">
+            Dentro de la gama, Move es la opción más orientada a continuidad y mantenimiento del movimiento.
+            También es la ficha más fácil de asociar con paseos, escaleras, juego y edad avanzada.
+          </div>
+        </div>
+      </section>
+
+      <section class="panel product" id="biscuits">
+        <div class="product-media">
+          <div class="product-media-card">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_5390_1.jpg" alt="LifePlus Pets Peanut Butter Biscuits" loading="lazy" />
+            <div class="product-code">Art. 5390</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Peanut Butter Biscuits</span>
+          <h3>Un premio funcional pensado para gustar y sumar nutrición.</h3>
+          <p>
+            La ficha de biscuits los presenta como algo más que una galleta: una recompensa con grasas saludables, proteína,
+            minerales y buena tolerancia digestiva. En el dossier encajan muy bien como producto de entrada o como premio útil.
+          </p>
+          <p>
+            Aquí el valor está en la facilidad de uso: es un premio que el dueño entiende al instante, que el perro acepta bien
+            y que permite introducir la marca con una compra sencilla. También sirve para abrir conversación sobre el resto de la gama
+            sin empezar por el producto más técnico.
+          </p>
+          <div class="note-card">
+            <strong>Cómo se usa:</strong> premio o snack funcional para uso ocasional o suplementario.
+          </div>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <strong>Ingredientes destacados</strong>
+              <ul>
+                <li>Mantequilla de cacahuete real</li>
+                <li>Semilla y aceite de Ahiflower®</li>
+                <li>Harina de trigo sarraceno y coco</li>
+                <li>Manzana, canela y melaza</li>
+                <li>Aceite de coco</li>
+              </ul>
+            </div>
+            <div class="detail-card">
+              <strong>Uso resumido</strong>
+              <ul>
+                <li>Snack / premio funcional</li>
+                <li>1 galleta equivale a unas 32 kcal</li>
+                <li>Sin gluten y sin GMO según el dossier</li>
+                <li>Formato: 210 g</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note-card">
+            Si buscas una referencia fácil de recomendar y muy entendible para el dueño, esta es la ficha más simple del conjunto.
+            Es la ficha más cómoda para entrada comercial, degustación y primera prueba de producto.
+          </div>
+        </div>
+      </section>
+
+      <section class="panel product" id="ahiflower">
+        <div class="product-media">
+          <div class="product-media-card">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3545_1.jpg" alt="LifePlus Pets Ahiflower Oil" loading="lazy" />
+            <div class="product-code">Art. 3545</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Ahiflower Oil</span>
+          <h3>Piel, pelaje y apoyo antioxidante con formato fácil de usar.</h3>
+          <p>
+            Ahiflower Oil se enfoca en hidratación, elasticidad, brillo del pelaje y protección frente a agresores ambientales.
+            Es una ficha claramente orientada a la percepción visible del resultado: cómo se ve y se siente la mascota.
+          </p>
+          <p>
+            Aquí el valor está en el resultado que el dueño puede notar en casa: un pelaje más cuidado, una piel mejor acompañada
+            y una forma de añadir omega-3, 6 y 9 sin complicar la rutina.
+          </p>
+          <div class="note-card">
+            <strong>Cómo se toma:</strong> pulverizar sobre los alimentos o directamente en la boca. 1 pulverización por cada 2,27 kg de peso corporal al día.
+          </div>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <strong>Ingredientes destacados</strong>
+              <ul>
+                <li>Aceite de semilla de Ahiflower®</li>
+                <li>Tocoferoles naturales</li>
+                <li>Extracto de romero</li>
+              </ul>
+            </div>
+            <div class="detail-card">
+              <strong>Uso resumido</strong>
+              <ul>
+                <li>1 pulverización diaria por cada 2 kg</li>
+                <li>Puede aplicarse sobre alimentos o directamente en la boca</li>
+                <li>Formato: 164 g</li>
+                <li>Más orientado a piel y pelaje que a movilidad o digestión</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note-card">
+            Es una opción especialmente buena cuando la prioridad es pelaje apagado, piel sensible o cuidado visible a medio plazo.
+            También funciona como producto de continuidad para familias que prefieren un formato líquido rápido de incorporar.
+          </div>
+        </div>
+      </section>
+
+      <section class="panel product" id="care-comfort">
+        <div class="product-media">
+          <div class="product-media-card">
+            <img src="https://ww1.lifeplus.com/images/products/prodpic_3540_1.jpg" alt="LifePlus Pets Care and Comfort" loading="lazy" />
+            <div class="product-code">Art. 3540 · Solo perros</div>
+          </div>
+        </div>
+        <div class="product-body">
+          <span class="product-tag">Care &amp; Comfort</span>
+          <h3>Spray externo para apoyo frente a insectos y cuidado calmante de la piel.</h3>
+          <p>
+            El dossier lo describe como un aerosol veterinario para perros frente a pulgas, garrapatas, mosquitos, moscas,
+            ácaros, piojos y otros parásitos externos. La propuesta se apoya en aceites naturales y en un uso externo muy práctico.
+          </p>
+          <p>
+            Es la ficha más directa para hablar de protección externa sin complicar el mensaje: no es un tratamiento oral,
+            es un spray de uso veterinario pensado para el pelaje y la rutina del perro.
+          </p>
+          <div class="note-card">
+            <strong>Cómo se aplica:</strong> agitar bien antes de usar. Rocíe generosamente el pelo de la mascota, evitando la nariz, la boca y los ojos. Puede emplearse a diario.
+          </div>
+          <div class="detail-grid">
+            <div class="detail-card">
+              <strong>Ingredientes destacados</strong>
+              <ul>
+                <li>Aceite de limoncillo</li>
+                <li>Aceite de canela</li>
+                <li>Aceite de andiroba</li>
+                <li>Aceite de ricino</li>
+              </ul>
+            </div>
+            <div class="detail-card">
+              <strong>Uso resumido</strong>
+              <ul>
+                <li>Agitar antes de usar</li>
+                <li>Rociar generosamente el pelaje</li>
+                <li>Evitar ojos, nariz y boca</li>
+                <li>Reaplicar cada dos o tres días o cuando se moje</li>
+              </ul>
+            </div>
+          </div>
+          <div class="note-card">
+            Es la ficha más orientada a uso externo y prevención práctica dentro del catálogo.
+            Si quieres un mensaje comercial limpio, aquí conviene repetir: aerosol veterinario, solo para perros y parásitos externos.
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="app-pets">
+        <span class="product-tag">App Pets</span>
+        <div class="app-grid">
+          <div>
+            <h3>Una capa digital para entrenar, relajarse y crear hábitos.</h3>
+            <p class="panel-lead">
+              La app se presenta como una comunidad dinámica con más de 1500 vídeos para entrenamiento, meditaciones, yoga,
+              recetas y actividades de vínculo entre humano y perro. Es el cierre del dossier porque amplía la marca desde el producto hacia el estilo de vida.
+            </p>
+
+            <div class="detail-grid">
+              <div class="detail-card">
+                <strong>Beneficios que destaca el dossier</strong>
+                <ul>
+                  <li>Mejor mente: meditaciones y respiración</li>
+                  <li>Mejor cuerpo: yoga, caminatas y ejercicios</li>
+                  <li>Mejor perro: obediencia básica y conductas avanzadas</li>
+                  <li>Mejor yo: itinerarios de bienestar</li>
+                </ul>
+              </div>
+              <div class="detail-card">
+                <strong>Formato de acceso</strong>
+                <ul>
+                  <li>Suscripción mensual o anual</li>
+                  <li>Disponible para iPhone y Android</li>
+                  <li>Complemento ideal a la parte física del catálogo</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+
+          <div class="app-rail">
+            <strong>1500+</strong>
+            <p>vídeos, rutinas y recursos para que el bienestar no se quede solo en el suplemento.</p>
+            <span>Entrenamiento</span>
+            <span>Meditación</span>
+            <span>Yoga</span>
+            <span>Recetas</span>
+            <span>Comunidad</span>
+          </div>
+        </div>
+      </section>
+
+      <section class="panel" id="cierre">
+        <h3>Cómo seguir a partir de aquí.</h3>
+        <div class="final-cta">
+          <p>
+            Si ya tienes claro qué necesidad quieres cubrir, vuelve al catálogo para ver productos. Si todavía estás comparando,
+            usa esta guía como lectura de referencia rápida y baja después a la ficha concreta que más se acerque al momento de tu perro.
+          </p>
+
+          <div class="inline-actions">
+            <a href="index.html#productos" class="btn btn-primary">Volver al catálogo</a>
+            <a href="https://ww1.lifeplus.com/es/es/web-page/products?search=pets" target="_blank" rel="noopener" class="btn btn-ghost">Ir a tienda</a>
+            
+          </div>
+        </div>
+
+        <p class="disclaimer">
+          Nota importante: esta guía resume contenido informativo del dossier y no sustituye el consejo veterinario profesional.
+          Los productos se presentan como apoyo nutricional o de bienestar y no como tratamiento médico.
+        </p>
+      </section>
+    </main>
+  </div>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <p class="footer-copy">
+        <a href="index.html">LifePlus Pets</a> · Guía práctica · ShopID LifePlus International<br>
+        ⚠️ Este contenido es informativo y no sustituye el consejo veterinario profesional.
+      </p>
+      
+    </div>
+  </footer>
+  <script src="assets/js/site-language.js"></script>
+</body>
+</html>
